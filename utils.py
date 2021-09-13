@@ -1,6 +1,5 @@
 import numpy as np
-from PIL import Image, ImageDraw
-import torch
+from PIL import Image
 import math
 import module
 

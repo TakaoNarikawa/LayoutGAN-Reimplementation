@@ -1,17 +1,16 @@
-from collections import OrderedDict
 import datetime
+import os
+from collections import OrderedDict
+
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from PIL import Image
 from pytorch_lightning.core import LightningModule
-import os
-import numpy as np
-
 
 import utils
-
-from module import initialize_layer, RelationNonLocal, LayoutPoint, LayoutBBox
+from module import LayoutBBox, LayoutPoint, RelationNonLocal, initialize_layer
 
 now = datetime.datetime.now()
 SAMPLE_DIR = f"./samples_{now.strftime(r'%Y%m%d%H%M%S')}"

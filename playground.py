@@ -1,11 +1,13 @@
+import itertools
+
 import numpy as np
-import module
-import data
+import torch
 from PIL import Image, ImageDraw
+
+import data
+import module
 import utils
 from data import PubLayNetDataset
-import torch
-import itertools
 
 np.set_printoptions(precision=1)
 

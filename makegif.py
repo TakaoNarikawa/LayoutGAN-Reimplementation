@@ -1,9 +1,7 @@
-import sys
-import cv2
 import os
 from glob import glob
+
 from PIL import Image
-import numpy as np
 
 paths = glob("samples_09111200_300epoch/*.png")
 paths = sorted(paths, key=lambda x: int(os.path.basename(x).replace(".png", "")))
