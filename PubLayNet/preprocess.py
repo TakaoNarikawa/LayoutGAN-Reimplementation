@@ -1,6 +1,7 @@
 import json
-import numpy as np
 from itertools import groupby
+
+import numpy as np
 
 # category = {
 #     1: "text",

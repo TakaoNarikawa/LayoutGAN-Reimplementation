@@ -1,7 +1,7 @@
 LayoutGAN Reimplementation
 ====
 
-PyTorch implementation of "LayoutGAN: Generating Graphic Layouts with Wireframe Discriminators" publishsed in ICLR 2019: https://openreview.net/forum?id=HJxB5sRcFQ.
+PyTorch reimplementation of "LayoutGAN: Generating Graphic Layouts with Wireframe Discriminators" publishsed in ICLR 2019: https://openreview.net/forum?id=HJxB5sRcFQ.
 
 ## Requirement
 
@@ -29,11 +29,17 @@ PubLayNet
 ```
 
 2. Run `python3 preprocess.py` in `/PubLayNet`. Then you will have `train.npy` and `val.npy`
-3. Run `python3 train.py`. Use `--gpus 1` option for GPU.
+3. Run `python3 train.py --train_mode bbox`. Use `--gpus 1` option for GPU.
 
 
 ## Results
 
 ### Point Layout
 
+
+<img src="https://github.com/TakaoNarikawa/LayoutGAN-Reimplementation/blob/main/screenshots/mnist.gif?raw=true" width=250px height=250px /> <img src="https://github.com/TakaoNarikawa/LayoutGAN-Reimplementation/blob/main/screenshots/mnist_30.png" width=250px height=250px />
+
 ### BBox Layout
+
+<img src="https://github.com/TakaoNarikawa/LayoutGAN-Reimplementation/blob/main/screenshots/publaynet.gif?raw=true" width=250px height=250px /> <img src="https://github.com/TakaoNarikawa/LayoutGAN-Reimplementation/blob/main/screenshots/publaynet_300.png" width=250px height=250px />
+

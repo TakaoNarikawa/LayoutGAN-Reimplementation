@@ -1,13 +1,5 @@
-from collections import OrderedDict
-
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-import torchvision
-from PIL import Image
-from pytorch_lightning.core import LightningModule
-
-import utils
 
 
 def initialize_layer(m):

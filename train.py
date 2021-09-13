@@ -1,13 +1,13 @@
 from argparse import ArgumentParser, Namespace
-from pytorch_lightning.trainer import Trainer
-from model import LayoutGAN
-import os
-import torchvision.transforms as transforms
-from torch.utils.data import DataLoader
+
 from pytorch_lightning.callbacks import LearningRateMonitor
+from pytorch_lightning.trainer import Trainer
+from torch.utils.data import DataLoader
 from torchvision.datasets import MNIST
+
 from data import MnistLayoutDataset, PubLayNetDataset
-import torch
+from model import LayoutGAN
+
 
 def train_point_model(args: Namespace) -> None:
     model = LayoutGAN(**vars(args), mode="point", element_num=128, class_num=1)
