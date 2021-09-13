@@ -29,7 +29,7 @@ PubLayNet
 ```
 
 2. Run `python3 preprocess.py` in `/PubLayNet`. Then you will have `train.npy` and `val.npy`
-3. Run `python3 train.py`. Use `--gpus 1` option for GPU.
+3. Run `python3 train.py --mode bbox`. Use `--gpus 1` option for GPU.
 
 
 ## Results
