@@ -3,6 +3,8 @@ LayoutGAN Reimplementation
 
 PyTorch reimplementation of "LayoutGAN: Generating Graphic Layouts with Wireframe Discriminators" publishsed in ICLR 2019: https://openreview.net/forum?id=HJxB5sRcFQ.
 
+<img src="https://github.com/TakaoNarikawa/LayoutGAN-Reimplementation/blob/main/screenshots/publaynet_300.png" width=400px height=400px />
+
 ## Requirement
 
 - PyTorch : 1.8.1
