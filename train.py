@@ -45,8 +45,13 @@ if __name__ == '__main__':
                         help="adam: decay of first order momentum of gradient")
     parser.add_argument("--b2", type=float, default=0.999,
                         help="adam: decay of first order momentum of gradient")
+    parser.add_argument('--mode', help='set mode, [point] or [bbox]', type=str, choices=['point', 'bbox'])
 
     hparams = parser.parse_args()
 
-    train_point_model(hparams)
-    # train_bbox_model(hparams)
+    mode = hparams.mode or "point"
+
+    if mode == "point":
+        train_point_model(hparams)
+    if mode == "bbox":
+        train_bbox_model(hparams)

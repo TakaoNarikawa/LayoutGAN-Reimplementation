@@ -58,9 +58,10 @@ if False:
     outputs = layouter(inputs)
     outputs = outputs.squeeze(0).detach().to('cpu').numpy()
     outputs = (outputs * 255).astype("uint8")
-    print(outputs.shape)
 
-    img = np.zeros((SIZE, SIZE, 3)) + 255
+    # outputs.shape: (5, 128, 128)
+
+    img = np.zeros((SIZE, SIZE, 3))
 
     colorset = [
         (0, 255, 0),
@@ -72,12 +73,12 @@ if False:
 
     for i, batch in enumerate(outputs):
         for x, y in itertools.product(range(SIZE), range(SIZE)):
-        if batch[y, x] > 0:
-            img[y, x] = colorset[i]
+            if batch[y, x] > 0:
+                img[y, x] = colorset[i]
 
-    Image.fromarray(outputs[0] * 255).save("PubLayNet_LayoutBBox.png")
+    Image.fromarray(img.astype("uint8")).save("PubLayNet_LayoutBBox.png")
 
-if True:
+if False:
     data = np.load("samples_09091100_100epoch/99.npy")
     data = torch.from_numpy(data)
     

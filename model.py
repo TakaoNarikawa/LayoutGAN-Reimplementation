@@ -14,8 +14,7 @@ import utils
 from module import initialize_layer, RelationNonLocal, LayoutPoint, LayoutBBox
 
 now = datetime.datetime.now()
-SAMPLE_DIR = f"./samples_{now.strftime(r"%Y%m%d%H%M%S")}"
-os.makedirs(SAMPLE_DIR, exist_ok=True)
+SAMPLE_DIR = f"./samples_{now.strftime(r'%Y%m%d%H%M%S')}"
 
 class PointGenerator(nn.Module):
     def __init__(self, element_num=128):
@@ -417,6 +416,8 @@ class LayoutGAN(LightningModule):
         batch = self(z)
         grid = self.no_grad_render(batch)
         self.logger.experiment.add_image('generated_images', grid, self.current_epoch)
+
+        os.makedirs(SAMPLE_DIR, exist_ok=True)
         Image.fromarray((grid * 255).transpose(1, 2, 0).astype("uint8")).save(os.path.join(SAMPLE_DIR, f"{self.current_epoch}.png"))
         np.save(os.path.join(SAMPLE_DIR, f"{self.current_epoch}"), batch.to('cpu').detach().numpy().copy())
 

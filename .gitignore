@@ -137,8 +137,10 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 lightning_logs/
-MNIST/
-PubLayNet/
+MNIST/*.npy
+PubLayNet/*.json
+PubLayNet/*.npy
 samples*/
 /*.png
 /*.mp4
+/*.gif
